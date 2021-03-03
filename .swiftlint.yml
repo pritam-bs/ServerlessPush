@@ -1,0 +1,21 @@
+disabled_rules:
+  - trailing_whitespace
+excluded:
+  - Carthage
+  - Pods
+  - vendor
+  - ServerlessPush/Resources/SwiftGen
+type_name:
+  excluded:
+    - T
+line_length:
+  ignores_comments: true
+identifier_name:
+  excluded:
+    - pi
+    - x
+    - y
+    - id
+    - ex
+    - ok
+

@@ -1,0 +1,16 @@
+/* 
+  Error.strings
+  ServerlessPush
+
+  Created by Pritam on 27/2/21.
+  
+*/
+
+"NetworkErrorTitle" = "Network Error";
+"NetworkErrorMessage" = "Your internet connection seems to be unavailable";
+"LoadingErrorTitle" = "Loading Error";
+"LoadingErrorMessage" = "Failed to load content";
+"SessionExpiredTitle" = "Session Expired";
+"SessionExpiredMessage" = "Session expired please login again";
+"UnknownErrorTitle" = "Unknown Error";
+"UnknownErrorMessage" = "Something went wrong please try again";

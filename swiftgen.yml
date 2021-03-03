@@ -1,0 +1,20 @@
+strings:
+  inputs: ServerlessPush/Resources/Strings/Base.lproj
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: ServerlessPush/Resources/SwiftGen/Strings.swift
+xcassets:
+  inputs:
+    - ServerlessPush/Resources/Images.xcassets
+    - ServerlessPush/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: ServerlessPush/Resources/SwiftGen/Assets.swift
+ib:
+  inputs: ServerlessPush/Resources/Storyboards
+  outputs:
+    - templateName: scenes-swift5
+      output: ServerlessPush/Resources/SwiftGen/StoryboardScenes.swift
+    - templateName: segues-swift5
+      output: ServerlessPush/Resources/SwiftGen/StoryboardSegues.swift

@@ -1,0 +1,91 @@
+name: Alamofire, nameSpecified: 
+body: Copyright (c) 2014-2…
+version: 5.4.1
+
+name: AppAuth, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: DefaultsKit, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.2.0
+
+name: IQKeyboardManagerSwift, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 6.5.6
+
+name: KeychainAccess, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.2.1
+
+name: Keys, nameSpecified: 
+body: MIT LICENSE Found in…
+version: 1.0.1
+
+name: Keys, nameSpecified: 
+body: MIT LICENSE Found in…
+version: 1.0.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.0.5
+
+name: Moya, nameSpecified: 
+body: The MIT License (MIT…
+version: 14.0.0
+
+name: NVActivityIndicatorView, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.1.1
+
+name: ReachabilitySwift, nameSpecified: 
+body: Copyright (c) 2016 A…
+version: 5.0.0
+
+name: Reusable, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.1.1
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxFlow, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.11.0
+
+name: RxGesture, nameSpecified: 
+body: Copyright (c) RxSwif…
+version: 3.0.2
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.2
+
+name: SwiftGen, nameSpecified: 
+body: MIT Licence
+
+Copyrig…
+version: 6.4.0
+
+name: SwiftyBeaver, nameSpecified: 
+body: The MIT License (MIT…
+version: 1.9.3
+
+add-version-numbers: true
+
+LicensePlist Version: 3.0.5

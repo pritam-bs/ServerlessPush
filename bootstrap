@@ -1,0 +1,203 @@
+#!/bin/sh
+
+usage_exit() {
+    echo "Usage: $0 [-u] [-c] [-r]" 1>&2
+    echo "  -u: Update packages"
+    echo "  -c: Clean build caches"
+    echo "  -r: Clean CocoaPods keys"
+    exit 1
+}
+
+abort() {
+    cd $CURRENT_DIR
+    echo "Bootstrap aborted."
+    exit 1
+}
+
+CURRENT_DIR=`pwd`
+SCRIPT_DIR=`dirname $0`
+
+UPDATE=false
+CLEAN=false
+CLEAN_POD_KEYS=false
+
+while getopts cuhr OPT
+do
+    case $OPT in
+        u) UPDATE=true
+            ;;
+        c) CLEAN=true
+            ;;
+        r) CLEAN_POD_KEYS=true
+            ;; 
+        h) usage_exit
+            ;;
+        \?) usage_exit
+            ;;
+    esac
+done
+
+INSTALL_BUNDLER=false
+INSTALL_PODS=false
+INSTALL_CARTHAGE=false
+INSTALL_NPM=false
+
+echo "Bootstrap build environment"
+
+cd $SCRIPT_DIR
+
+echo "Check depended tools."
+
+echo "Checks RubyGems Bundler"
+if [ -e "Gemfile" ] ; then
+    echo "Gemfile found. Checks bundle installed."
+    if !(type "bundle" > /dev/null 2>&1) ; then
+        echo "Error: RubyGems Bundler is not installed."
+        abort
+    fi
+    INSTALL_BUNDLER=true
+else
+    echo "Gemfile not found. Skip to install Bundle packages."
+fi
+
+echo "Checks CocoaPods"
+IS_COCOAPODS_DEFINED_IN_GEMFILE=false
+if [ -e "Podfile" ] ; then
+    echo "Podfile found. Checks CocoaPods installed or defined in Bundler."
+    if !(type "pod" > /dev/null 2>&1) ; then
+        grep cocoapods Gemfile
+        if [ $? -ne 0 ] ; then
+            echo "Error: CocoaPods is not installed on your system and not defined in Gemfile."
+            abort
+        else
+            echo "CocoaPods is defined in Gemfile."
+            IS_COCOAPODS_DEFINED_IN_GEMFILE=true
+        fi
+    else
+        echo "CocoaPods is installed in system."
+    fi
+    INSTALL_PODS=true
+else
+    echo "Podfile not found. Skip to install CocoaPods packages."
+fi
+
+echo "Checks Carthage"
+if [ -e "Cartfile" ] ; then
+    echo "Cartfile found. Checks Carthage installed."
+    if !(type "carthage" > /dev/null 2>&1) ; then
+        echo "Error: Carthage is not installed."
+        abort
+    fi
+    INSTALL_CARTHAGE=true
+else
+    echo "Podfile not found. Skip to install Carthage packages."
+fi
+
+echo "Checks NPM"
+if [ -e "package.json" ] ; then
+    echo "package.json found. Check npm installed."
+    if !(type "npm" > /dev/null 2>&1) ; then
+        echo "Error: NPM is not installed."
+        abort
+    fi
+    INSTALL_NPM=true
+else
+    echo "package.json not found. Skip to install NPM packages."
+fi
+
+echo "Check environment is completed."
+
+if $CLEAN ; then
+    echo "Cleans caches."
+    if $INSTALL_BUNDLER ; then
+        echo "Removing vendor/bundle"
+        rm -rf vendor/bundle
+    fi
+    if $INSTALL_PODS ; then
+        echo "Removing Pods"
+        rm -rf Pods
+    fi
+    if $INSTALL_CARTHAGE ; then
+        echo "Removing Carthage"
+        rm -rf Carthage
+    fi
+    if $INSTALL_NPM ; then
+        echo "Removing node_modules"
+        rm -rf node_modules
+    fi
+    echo "Clean caches completed."
+fi
+
+echo "Begins installing packages."
+
+if $INSTALL_BUNDLER ; then
+    echo "Installing RubyGems Bundler packages"
+    bundle install --path=vendor/bundle
+    if $UPDATE ; then
+        echo "Update RubyGems Bundler packages"
+        bundle update
+    fi
+fi
+
+if $INSTALL_PODS ; then
+    if $UPDATE ; then
+        echo "Installs CocoaPods packages (Update mode)"
+        if [ IS_COCOAPODS_DEFINED_IN_GEMFILE ] ; then
+            bundle exec pod repo update
+            if $CLEAN_POD_KEYS ; then
+                bundle exec pod keys rm "*" ServerlessPushApp
+            fi
+            bundle exec pod update
+        elif (type "pod" > /dev/null 2>&1) ; then
+            pod repo update
+            if $CLEAN_POD_KEYS ; then
+                bundle exec pod keys rm "*" ServerlessPushApp
+            fi
+            pod update
+        else
+            echo "Error: CocoaPods not installed."
+            abort
+        fi
+    else
+        echo "Installs CocoaPods packages"
+        if [ IS_COCOAPODS_DEFINED_IN_GEMFILE ] ; then
+            bundle exec pod repo update
+            if $CLEAN_POD_KEYS ; then
+                bundle exec pod keys rm "*" ServerlessPushApp
+            fi
+            bundle exec pod install
+        elif (type "pod" > /dev/null 2>&1) ; then
+            pod repo update
+            if $CLEAN_POD_KEYS ; then
+                bundle exec pod keys rm "*" ServerlessPushApp
+            fi
+            pod install
+        else
+            echo "Error: CocoaPods not installed."
+            abort
+        fi
+    fi
+fi
+
+if $INSTALL_CARTHAGE ; then
+    if $UPDATE ; then
+        echo "Installs Carthage packages (Update mode)"
+        carthage update --cache-builds --use-xcframeworks --platform ios
+    else
+        echo "Installs Carthage packages"
+        carthage bootstrap --cache-builds --use-xcframeworks --platform ios
+    fi
+fi
+
+if $INSTALL_NPM ; then
+    echo "Installs NPM packages."
+    npm install
+    if $UPDATE; then
+        echo "Updates NPM packages."
+        npm update
+    fi
+fi
+
+echo "Bootstrap finished"
+cd $CURRENT_DIR
+

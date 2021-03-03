@@ -1,0 +1,113 @@
+PODS:
+  - Alamofire (5.4.1)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
+  - DefaultsKit (0.2.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - KeychainAccess (4.2.1)
+  - Keys (1.0.1)
+  - LicensePlist (3.0.5)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - ReachabilitySwift (5.0.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxFlow (2.11.0):
+    - RxCocoa (>= 5.1.1)
+    - RxSwift (>= 5.1.1)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.2)
+  - SwiftGen (6.4.0)
+  - SwiftLint (0.42.0)
+  - SwiftyBeaver (1.9.3)
+
+DEPENDENCIES:
+  - AppAuth
+  - DefaultsKit
+  - IQKeyboardManagerSwift
+  - KeychainAccess
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - LicensePlist
+  - Moya (~> 14.0)
+  - Moya/RxSwift (~> 14.0)
+  - NVActivityIndicatorView
+  - ReachabilitySwift (~> 5.0)
+  - Reusable
+  - RxCocoa (~> 5.0)
+  - RxFlow (~> 2.11.0)
+  - RxGesture (~> 3.0)
+  - RxSwift (~> 5.0)
+  - SwiftGen
+  - SwiftLint
+  - SwiftyBeaver
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppAuth
+    - DefaultsKit
+    - IQKeyboardManagerSwift
+    - KeychainAccess
+    - LicensePlist
+    - Moya
+    - NVActivityIndicatorView
+    - ReachabilitySwift
+    - Reusable
+    - RxCocoa
+    - RxFlow
+    - RxGesture
+    - RxRelay
+    - RxSwift
+    - SwiftGen
+    - SwiftLint
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  DefaultsKit: 6c767941b2c3fe34c4d70e300e6c3b80c94964dd
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  LicensePlist: 11c638fa9dc22ddb5771cdf910242ae1ba2684da
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxFlow: c5242626a73a03d0a0163f0ab795538c467b791f
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftyBeaver: 2e8acd6fc90c6d0a27055867a290794926d57c02
+
+PODFILE CHECKSUM: d47e889604531fc8aefacccb7de6d6682decb2be
+
+COCOAPODS: 1.10.1
