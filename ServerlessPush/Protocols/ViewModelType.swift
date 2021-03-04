@@ -44,7 +44,7 @@ extension ViewModelType {
 
 protocol ServiceType {
     associatedtype Services
-    var services: Services { get set }
+    var services: Services? { get set }
 }
 
 protocol ServicesViewModelType: ViewModelType, ServiceType {
