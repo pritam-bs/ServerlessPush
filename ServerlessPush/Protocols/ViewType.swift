@@ -64,8 +64,7 @@ extension ViewType where Self: UIViewController {
                 if self.shouldShowErrorDialog(
                     errorResponse: response.errorResponse,
                     requestTag: response.requestTag) {
-                    self.showErrorAlert(appError: response.errorResponse)
-                    { [weak self] (alertAction) in
+                    self.showErrorAlert(appError: response.errorResponse) { [weak self] (alertAction) in
                         switch alertAction {
                         case .logout:
                             self?.viewModel?.logout()

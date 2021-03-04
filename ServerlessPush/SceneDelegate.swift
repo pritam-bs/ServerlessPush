@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let flowCoordinator = FlowCoordinator()
     var appFlow: AppFlow!
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
         appWindow.windowScene = windowScene
@@ -72,7 +74,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             if let url = userActivity.webpageURL {
-                if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+                if let authorizationFlow = self.currentAuthorizationFlow,
+                   authorizationFlow.resumeExternalUserAgentFlow(with: url) {
                     self.currentAuthorizationFlow = nil
                 }
             }
@@ -101,9 +104,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let appIdCallBackUrl = appIdCallBackUrlComponents.url else { return }
         
-        if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: appIdCallBackUrl) {
+        if let authorizationFlow = self.currentAuthorizationFlow,
+           authorizationFlow.resumeExternalUserAgentFlow(with: appIdCallBackUrl) {
             self.currentAuthorizationFlow = nil
         }
     }
 }
-

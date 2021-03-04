@@ -31,7 +31,6 @@ class AuthViewManager: NSObject {
             // performs authentication request
             log.debug("Initiating authorization request with scope: \(request.scope ?? "DEFAULT_SCOPE")")
 
-            
             guard let sceneDelegate = UIApplication
                     .shared
                     .connectedScenes
@@ -52,11 +51,15 @@ class AuthViewManager: NSObject {
             
             let userAgentSafari = OIDExternalUserAgentIOSCustomBrowser.customBrowserSafari()
             
-            sceneDelegate.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request, externalUserAgent: userAgentSafari) { [weak self]  authState, error in
+            sceneDelegate.currentAuthorizationFlow =
+                OIDAuthState.authState(
+                    byPresenting: request,
+                    externalUserAgent: userAgentSafari) { [weak self]  authState, error in
 
                 if let authState = authState {
                     self?.dataManager.authState = authState
-                    log.debug("Got authorization tokens. Access token: \(authState.lastTokenResponse?.accessToken ?? "DEFAULT_TOKEN")")
+                    log.debug("Got authorization tokens. Access token:" +
+                                "\(String(describing: authState.lastTokenResponse?.accessToken))")
                     self?.setAuthState(authState: authState)
                     self?.controller?.loginCompletion(isSuccess: true, error: nil)
                 } else {
@@ -144,4 +147,3 @@ extension AuthViewManager: OIDAuthStateChangeDelegate, OIDAuthStateErrorDelegate
         log.debug("Received authorization error: \(error)")
     }
 }
-

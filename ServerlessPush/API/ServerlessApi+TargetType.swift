@@ -55,7 +55,7 @@ extension ServerlessApi: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         var headers = [
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",

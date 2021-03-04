@@ -33,7 +33,10 @@ class WelcomeFlow: Flow {
         let viewModel = WelcomeViewModel()
         let controller = WelcomeViewController.instantiate(withViewModel: viewModel)
         rootController.replaceViewController(controller, animated: true)
-        return FlowContributors.one(flowContributor: FlowContributor.contribute(withNextPresentable: controller, withNextStepper: viewModel)
+        return FlowContributors.one(
+            flowContributor: FlowContributor.contribute(
+                withNextPresentable: controller,
+                withNextStepper: viewModel)
         )
     }
     
