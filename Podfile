@@ -49,9 +49,18 @@ target 'ServerlessPush' do
               config.build_settings["CODE_SIGN_ENTITLEMENTS"] = "ServerlessPush/Config/Capabilities/development.entitlements"
               config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.serverlesspush.debug"
               config.build_settings["BUNDLE_DISPLAY_NAME"] = "ServerlessPush Debug"
-              config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG"
+              if config.name == "Stub"
+                config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG -D API_STUB"
+              else
+                config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG"
+              end
+            elsif config.name == "Staging"
+              config.build_settings["CODE_SIGN_ENTITLEMENTS"] = "ServerlessPush/Config/Capabilities/development.entitlements"
+              config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.serverlesspush.staging"
+              config.build_settings["BUNDLE_DISPLAY_NAME"] = "ServerlessPush Staging"
+              config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_STAGING"
             else
-              config.build_settings["CODE_SIGN_ENTITLEMENTS"] = ""
+              config.build_settings["CODE_SIGN_ENTITLEMENTS"] = "ServerlessPush/Config/Capabilities/production.entitlements"
               config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.serverlesspush"
               config.build_settings["BUNDLE_DISPLAY_NAME"] = "ServerlessPush"
               config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_RELEASE"
