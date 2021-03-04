@@ -8,7 +8,15 @@
 import RxFlow
 
 enum AppStep: Step {
-    case auth
+    case initialization
+    case completeInitialization(next: NextToInitialization)
+    case welcome
+    case completeWelcome
     case home
     case logout
+}
+
+enum NextToInitialization {
+    case home
+    case welcome
 }

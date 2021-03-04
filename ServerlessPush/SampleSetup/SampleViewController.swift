@@ -11,7 +11,7 @@ import RxSwift
 
 class SampleViewController: BaseViewController, StoryboardSceneBased, ViewType {
     typealias ViewModel = SampleViewModel
-    var viewModel: SampleViewModel? = SampleViewModel()
+    var viewModel: ViewModel? = SampleViewModel()
     
     static var sceneStoryboard = UIStoryboard(name: StoryboardScene.Sample.storyboardName, bundle: nil)
     

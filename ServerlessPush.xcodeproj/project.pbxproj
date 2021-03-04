@@ -37,6 +37,26 @@
 		9C4F10C125EE63CF001591DC /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F10C025EE63CF001591DC /* NetworkProvider.swift */; };
 		9C4F110625EE907E001591DC /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F110525EE907E001591DC /* SessionManager.swift */; };
 		9C4F110E25EE9184001591DC /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F110D25EE9184001591DC /* HTTPStatusCodes.swift */; };
+		9C4F111725EF3881001591DC /* AppStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F111625EF3881001591DC /* AppStateService.swift */; };
+		9C4F111F25EF391A001591DC /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F111E25EF391A001591DC /* AppFlow.swift */; };
+		9C4F112425EF3991001591DC /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F112325EF3991001591DC /* HomeFlow.swift */; };
+		9C4F112925EF39B1001591DC /* InitializationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F112825EF39B1001591DC /* InitializationFlow.swift */; };
+		9C4F112F25EF3ABE001591DC /* InitializationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F112E25EF3ABE001591DC /* InitializationViewController.swift */; };
+		9C4F113725EF3AD3001591DC /* InitializationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F113625EF3AD3001591DC /* InitializationViewModel.swift */; };
+		9C4F113C25EF3FCD001591DC /* Initialization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F113B25EF3FCD001591DC /* Initialization.storyboard */; };
+		9C4F114225EF4896001591DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F114125EF4896001591DC /* HomeViewController.swift */; };
+		9C4F114A25EF48A2001591DC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F114925EF48A2001591DC /* HomeViewModel.swift */; };
+		9C4F114F25EF48DB001591DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F114E25EF48DB001591DC /* Home.storyboard */; };
+		9C4F115525EF49EF001591DC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F115425EF49EF001591DC /* Welcome.storyboard */; };
+		9C4F115A25EF4A1E001591DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F115925EF4A1E001591DC /* WelcomeViewController.swift */; };
+		9C4F116225EF4A2C001591DC /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F116125EF4A2C001591DC /* WelcomeViewModel.swift */; };
+		9C4F116725EF4ABC001591DC /* WelcomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F116625EF4ABC001591DC /* WelcomeFlow.swift */; };
+		9C4F116C25EF4BB3001591DC /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F116B25EF4BB3001591DC /* UINavigationController+Extensions.swift */; };
+		9C4F117125EF52F6001591DC /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F117025EF52F6001591DC /* UIWindow+Extensions.swift */; };
+		9C4F117725EF639D001591DC /* AuthViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F117625EF639D001591DC /* AuthViewManager.swift */; };
+		9C4F117C25EF63AD001591DC /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F117B25EF63AD001591DC /* AuthDataManager.swift */; };
+		9C4F118125EF6A88001591DC /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F118025EF6A88001591DC /* Dictionary+Extensions.swift */; };
+		9C4F118625EF6B3F001591DC /* Characterset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F118525EF6B3F001591DC /* Characterset+Extensions.swift */; };
 		9CCDD58525E965BA00B5CAC7 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDD58425E965BA00B5CAC7 /* Assets.swift */; };
 		9CCDD58A25E965C400B5CAC7 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDD58925E965C400B5CAC7 /* StoryboardScenes.swift */; };
 		9CCDD58F25E965CE00B5CAC7 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDD58E25E965CE00B5CAC7 /* StoryboardSegues.swift */; };
@@ -74,11 +94,32 @@
 
 /* Begin PBXFileReference section */
 		72AFF23B6BC8A17022452CAA /* Pods-ServerlessPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServerlessPush.release.xcconfig"; path = "Target Support Files/Pods-ServerlessPush/Pods-ServerlessPush.release.xcconfig"; sourceTree = "<group>"; };
+		9C49F40E25EFDD20008C14C2 /* development.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
 		9C4F10AA25EDE798001591DC /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		9C4F10BB25EE2AE2001591DC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9C4F10C025EE63CF001591DC /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		9C4F110525EE907E001591DC /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		9C4F110D25EE9184001591DC /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		9C4F111625EF3881001591DC /* AppStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateService.swift; sourceTree = "<group>"; };
+		9C4F111E25EF391A001591DC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		9C4F112325EF3991001591DC /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		9C4F112825EF39B1001591DC /* InitializationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationFlow.swift; sourceTree = "<group>"; };
+		9C4F112E25EF3ABE001591DC /* InitializationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationViewController.swift; sourceTree = "<group>"; };
+		9C4F113625EF3AD3001591DC /* InitializationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationViewModel.swift; sourceTree = "<group>"; };
+		9C4F113B25EF3FCD001591DC /* Initialization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initialization.storyboard; sourceTree = "<group>"; };
+		9C4F114125EF4896001591DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9C4F114925EF48A2001591DC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9C4F114E25EF48DB001591DC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		9C4F115425EF49EF001591DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		9C4F115925EF4A1E001591DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		9C4F116125EF4A2C001591DC /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		9C4F116625EF4ABC001591DC /* WelcomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFlow.swift; sourceTree = "<group>"; };
+		9C4F116B25EF4BB3001591DC /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		9C4F117025EF52F6001591DC /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		9C4F117625EF639D001591DC /* AuthViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewManager.swift; sourceTree = "<group>"; };
+		9C4F117B25EF63AD001591DC /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		9C4F118025EF6A88001591DC /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		9C4F118525EF6B3F001591DC /* Characterset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characterset+Extensions.swift"; sourceTree = "<group>"; };
 		9C590AF125E923B60028A484 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		9CCDD58425E965BA00B5CAC7 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		9CCDD58925E965C400B5CAC7 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
@@ -148,19 +189,75 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C49F40F25EFDD3A008C14C2 /* Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				9C49F40E25EFDD20008C14C2 /* development.entitlements */,
+			);
+			path = Capabilities;
+			sourceTree = "<group>";
+		};
 		9C4F110425EE8F73001591DC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				9C4F117525EF6391001591DC /* Auth */,
 				9C4F110525EE907E001591DC /* SessionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		9C4F111525EF386E001591DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F111625EF3881001591DC /* AppStateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9C4F112D25EF3AA9001591DC /* Initialization */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F112E25EF3ABE001591DC /* InitializationViewController.swift */,
+				9C4F113625EF3AD3001591DC /* InitializationViewModel.swift */,
+			);
+			path = Initialization;
+			sourceTree = "<group>";
+		};
+		9C4F114025EF487C001591DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F114125EF4896001591DC /* HomeViewController.swift */,
+				9C4F114925EF48A2001591DC /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9C4F115325EF49BA001591DC /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F115925EF4A1E001591DC /* WelcomeViewController.swift */,
+				9C4F116125EF4A2C001591DC /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9C4F117525EF6391001591DC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F117625EF639D001591DC /* AuthViewManager.swift */,
+				9C4F117B25EF63AD001591DC /* AuthDataManager.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		9CCDD58025E9656E00B5CAC7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				9C4F115425EF49EF001591DC /* Welcome.storyboard */,
 				9CCDD5E025E96DC400B5CAC7 /* Auth.storyboard */,
 				9CCDD66F25EC850300B5CAC7 /* Sample.storyboard */,
+				9C4F113B25EF3FCD001591DC /* Initialization.storyboard */,
+				9C4F114E25EF48DB001591DC /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -221,6 +318,10 @@
 			isa = PBXGroup;
 			children = (
 				9CCDD61825EABE4400B5CAC7 /* AppStep.swift */,
+				9C4F111E25EF391A001591DC /* AppFlow.swift */,
+				9C4F112325EF3991001591DC /* HomeFlow.swift */,
+				9C4F112825EF39B1001591DC /* InitializationFlow.swift */,
+				9C4F116625EF4ABC001591DC /* WelcomeFlow.swift */,
 			);
 			path = NavigationFlows;
 			sourceTree = "<group>";
@@ -245,6 +346,9 @@
 		9CCDD64925EBE53D00B5CAC7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9C4F115325EF49BA001591DC /* Welcome */,
+				9C4F114025EF487C001591DC /* Home */,
+				9C4F112D25EF3AA9001591DC /* Initialization */,
 				9CCDD67425ECA5CC00B5CAC7 /* Bases */,
 				9CCDD64A25EBE54B00B5CAC7 /* Auth */,
 			);
@@ -273,6 +377,10 @@
 			isa = PBXGroup;
 			children = (
 				9CCDD68625ECDED400B5CAC7 /* SwiftyBeaver+Extensions.swift */,
+				9C4F116B25EF4BB3001591DC /* UINavigationController+Extensions.swift */,
+				9C4F117025EF52F6001591DC /* UIWindow+Extensions.swift */,
+				9C4F118025EF6A88001591DC /* Dictionary+Extensions.swift */,
+				9C4F118525EF6B3F001591DC /* Characterset+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +421,7 @@
 		9CD3713625E8828400881CDC /* ServerlessPush */ = {
 			isa = PBXGroup;
 			children = (
+				9C4F111525EF386E001591DC /* Services */,
 				9C4F110425EE8F73001591DC /* Managers */,
 				9CCDD69125ED177600B5CAC7 /* API */,
 				9CCDD68525ECDEC200B5CAC7 /* Extensions */,
@@ -336,6 +445,7 @@
 		9CD3714C25E88CA500881CDC /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				9C49F40F25EFDD3A008C14C2 /* Capabilities */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -432,11 +542,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CCDD5B525E969CC00B5CAC7 /* Common.strings in Resources */,
+				9C4F114F25EF48DB001591DC /* Home.storyboard in Resources */,
 				9CD3714425E8828600881CDC /* LaunchScreen.storyboard in Resources */,
 				9CCDD67025EC850300B5CAC7 /* Sample.storyboard in Resources */,
 				9CCDD5E125E96DC400B5CAC7 /* Auth.storyboard in Resources */,
 				9CCDD63725EB49D000B5CAC7 /* Alert.strings in Resources */,
 				9CCDD60525EA3D0200B5CAC7 /* Error.strings in Resources */,
+				9C4F113C25EF3FCD001591DC /* Initialization.storyboard in Resources */,
+				9C4F115525EF49EF001591DC /* Welcome.storyboard in Resources */,
 				9CD3717125E89F9500881CDC /* Colors.xcassets in Resources */,
 				9CD3714125E8828600881CDC /* Images.xcassets in Resources */,
 			);
@@ -545,16 +658,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4F112F25EF3ABE001591DC /* InitializationViewController.swift in Sources */,
 				9CCDD58F25E965CE00B5CAC7 /* StoryboardSegues.swift in Sources */,
+				9C4F118125EF6A88001591DC /* Dictionary+Extensions.swift in Sources */,
 				9CCDD61925EABE4400B5CAC7 /* AppStep.swift in Sources */,
+				9C4F118625EF6B3F001591DC /* Characterset+Extensions.swift in Sources */,
 				9C4F110E25EE9184001591DC /* HTTPStatusCodes.swift in Sources */,
+				9C4F112925EF39B1001591DC /* InitializationFlow.swift in Sources */,
 				9C4F10C125EE63CF001591DC /* NetworkProvider.swift in Sources */,
 				9CCDD60A25EA3D9100B5CAC7 /* Strings.swift in Sources */,
 				9CCDD6A525EDC98D00B5CAC7 /* ServerlessApi+ApiType.swift in Sources */,
 				9CCDD5F725EA0D5300B5CAC7 /* AppError.swift in Sources */,
 				9C4F110625EE907E001591DC /* SessionManager.swift in Sources */,
+				9C4F114A25EF48A2001591DC /* HomeViewModel.swift in Sources */,
 				9CCDD63D25EB52F100B5CAC7 /* SampleViewController.swift in Sources */,
 				9CCDD68125ECC16F00B5CAC7 /* BaseViewModel.swift in Sources */,
+				9C4F112425EF3991001591DC /* HomeFlow.swift in Sources */,
+				9C4F113725EF3AD3001591DC /* InitializationViewModel.swift in Sources */,
+				9C4F111F25EF391A001591DC /* AppFlow.swift in Sources */,
 				9CCDD6AA25EDC9D900B5CAC7 /* ServerlessApi+Testing.swift in Sources */,
 				9CCDD69325EDC81F00B5CAC7 /* ServerlessApi.swift in Sources */,
 				9CD3713825E8828400881CDC /* AppDelegate.swift in Sources */,
@@ -563,17 +684,26 @@
 				9CCDD68725ECDED400B5CAC7 /* SwiftyBeaver+Extensions.swift in Sources */,
 				9CCDD58525E965BA00B5CAC7 /* Assets.swift in Sources */,
 				9CCDD65125EBE59100B5CAC7 /* SignInViewModel.swift in Sources */,
+				9C4F114225EF4896001591DC /* HomeViewController.swift in Sources */,
 				9CCDD6A025EDC90800B5CAC7 /* ServerlessApi+TargetType.swift in Sources */,
 				9C4F10BC25EE2AE2001591DC /* NetworkManager.swift in Sources */,
+				9C4F117725EF639D001591DC /* AuthViewManager.swift in Sources */,
 				9CD3713A25E8828400881CDC /* SceneDelegate.swift in Sources */,
+				9C4F116C25EF4BB3001591DC /* UINavigationController+Extensions.swift in Sources */,
+				9C4F116225EF4A2C001591DC /* WelcomeViewModel.swift in Sources */,
 				9CCDD58A25E965C400B5CAC7 /* StoryboardScenes.swift in Sources */,
 				9CCDD64525EB5F7700B5CAC7 /* SampleViewModel.swift in Sources */,
+				9C4F111725EF3881001591DC /* AppStateService.swift in Sources */,
+				9C4F117125EF52F6001591DC /* UIWindow+Extensions.swift in Sources */,
+				9C4F117C25EF63AD001591DC /* AuthDataManager.swift in Sources */,
+				9C4F116725EF4ABC001591DC /* WelcomeFlow.swift in Sources */,
 				9CCDD64C25EBE58100B5CAC7 /* SignInViewController.swift in Sources */,
 				9C4F10AB25EDE798001591DC /* ReachabilityService.swift in Sources */,
 				9CCDD5EF25EA012600B5CAC7 /* ViewType.swift in Sources */,
 				9CCDD62625EB319A00B5CAC7 /* ActivityIndicatorProperties.swift in Sources */,
 				9CCDD69B25EDC8AA00B5CAC7 /* ServerlessApiType.swift in Sources */,
 				9CCDD5E725EA00F000B5CAC7 /* ViewModelType.swift in Sources */,
+				9C4F115A25EF4A1E001591DC /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,8 +907,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_DISPLAY_NAME = "ServerlessPush Debug";
 				CODE_SIGN_ENTITLEMENTS = ServerlessPush/Config/Capabilities/development.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZRS9362HF;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XYSCZDXKR7;
 				INFOPLIST_FILE = ServerlessPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -787,6 +918,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ENV_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.serverlesspush.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ServerlessPushProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -799,9 +931,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_DISPLAY_NAME = ServerlessPush;
-				CODE_SIGN_ENTITLEMENTS = ServerlessPush/Config/Capabilities/production.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZRS9362HF;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XYSCZDXKR7;
 				INFOPLIST_FILE = ServerlessPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -810,6 +943,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ENV_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.serverlesspush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

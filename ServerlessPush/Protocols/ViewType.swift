@@ -89,7 +89,7 @@ extension ViewType where Self: StoryboardSceneBased & UIViewController {
     }
 }
 
-extension ViewType where Self: StoryboardSceneBased & UIViewController, ViewModel: ServicesViewModelType {
+extension ViewType where Self: StoryboardSceneBased & UIViewController, ViewModel: ViewModelType & ServiceType {
     static func instantiate<ViewModel, Services> (
         withViewModel viewModel: ViewModel,
         andServices services: Services) -> Self
