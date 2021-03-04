@@ -6,38 +6,24 @@
 //
 
 import UIKit
-import SwiftyBeaver
-import IQKeyboardManagerSwift
-import RxFlow
-import RxSwift
-import AppAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    var currentAuthorizationFlow: OIDExternalUserAgentSession?
+
     var window: UIWindow?
-    let disposeBag = DisposeBag()
-    let flowCoordinator = FlowCoordinator()
-    var appFlow: AppFlow!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
         appWindow.windowScene = windowScene
+
+        let navigationController = UINavigationController()
+        let viewModel = SampleViewModel()
+        let controller = SampleViewController.instantiate(withViewModel: viewModel)
+        navigationController.viewControllers = [controller]
+
+        appWindow.rootViewController = navigationController
         appWindow.makeKeyAndVisible()
-        
-        flowCoordinator.rx.didNavigate
-            .subscribe(onNext: { (flow, step) in
-                log.debug("[FlowCoordinator] App has been navigated.\n  Flow: \(flow)\n  Step: \(step)")
-            })
-            .disposed(by: disposeBag)
-        
-        appFlow = AppFlow(window: appWindow)
-        
-        let compositeStepper = CompositeStepper(
-            steppers: [OneStepper(withSingleStep: AppStep.initialization)]
-        )
-        flowCoordinator.coordinate(flow: appFlow, with: compositeStepper)
-        
+            
         window = appWindow
     }
 
@@ -68,42 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            if let url = userActivity.webpageURL {
-                if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: url) {
-                    self.currentAuthorizationFlow = nil
-                }
-            }
-        }
-    }
-    
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        guard let url = URLContexts.first?.url else { return }
-        self.handleDeepLinkUrl(url: url)
-    }
-    
-    func handleDeepLinkUrl(url: URL) {
-        let receivedUrlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        let queryItems = receivedUrlComponent?.queryItems
-        let path = receivedUrlComponent?.path
-        let host = receivedUrlComponent?.host
-        
-        var appIdCallBackUrlComponents = URLComponents()
-        appIdCallBackUrlComponents.scheme = "https"
-        appIdCallBackUrlComponents.host = host
-        if let path = path {
-            appIdCallBackUrlComponents.path = path
-        }
-        appIdCallBackUrlComponents.queryItems = queryItems
-        log.debug(appIdCallBackUrlComponents)
-        
-        guard let appIdCallBackUrl = appIdCallBackUrlComponents.url else { return }
-        
-        if let authorizationFlow = self.currentAuthorizationFlow, authorizationFlow.resumeExternalUserAgentFlow(with: appIdCallBackUrl) {
-            self.currentAuthorizationFlow = nil
-        }
-    }
+
+
 }
 
