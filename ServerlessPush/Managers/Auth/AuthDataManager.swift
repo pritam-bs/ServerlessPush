@@ -113,8 +113,7 @@ class AuthDataManager {
             return
         }
         
-        OIDAuthorizationService.discoverConfiguration(forIssuer: issuer)
-        {[weak self] configuration, error in
+        OIDAuthorizationService.discoverConfiguration(forIssuer: issuer) { [weak self] configuration, error in
             
             guard let configuration = configuration else {
                 log.debug("Error retrieving discovery document: \(error?.localizedDescription ?? "DEFAULT_ERROR")")
@@ -151,7 +150,13 @@ class AuthDataManager {
     
     func doEndSessionApiCall(completion: @escaping (Bool) -> Void) {
         let authState = self.getAuthState()
-        guard let endSessionEndpoint = authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.endSessionEndpoint else {
+        guard let endSessionEndpoint =
+                authState?
+                .lastAuthorizationResponse
+                .request
+                .configuration
+                .discoveryDocument?
+                .endSessionEndpoint else {
             log.debug("End session endpoint not declared in discovery document")
             completion(false)
             return
@@ -215,4 +220,3 @@ class AuthDataManager {
         return try? SessionManager.shared.loadAuthState()
     }
 }
-

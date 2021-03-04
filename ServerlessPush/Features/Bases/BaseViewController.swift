@@ -25,7 +25,7 @@ class BaseViewController: UIViewController, ActivityIndicatorViewType, ErrorSupp
         let message = L10n.Error.sessionExpiredMessage
         let alertAction = UIAlertAction(
             title: L10n.Alert.sessionExpiredActionTitle,
-            style: .default) { (alertAction) in
+            style: .default) { (_) in
             action(ErrorAlertActionType.logout)
         }
         

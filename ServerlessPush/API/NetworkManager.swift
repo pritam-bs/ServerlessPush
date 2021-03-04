@@ -24,8 +24,9 @@ struct NetworkManager {
     let provider: NetworkProvider<ServerlessApi>
     
     init(isStubbed: Bool = false) { 
-        guard let reachabilityService = try? ReachabilityService() else { fatalError("Reachability service initialization failure")
-        }
+        guard let reachabilityService = try? ReachabilityService()
+        else { fatalError("Reachability service initialization failure")}
+        
         self.reachabilityService = reachabilityService
         
         var plugins: [PluginType] = []

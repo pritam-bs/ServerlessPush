@@ -73,4 +73,3 @@ enum HTTPStatusCodes: Int {
     case notExtended = 510
     case networkAuthenticationRequired
 }
-
